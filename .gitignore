@@ -6,5 +6,7 @@
 /dataSources/
 /dataSources.local.xml
 
+build
+
 .idea
 .gradle
