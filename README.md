@@ -19,3 +19,12 @@
 Поражение
 
 <img src="screens/calc-fail.png" alt="Game win" style="width:500px;"/>
+
+### GCD
+Победа
+
+<img src="screens/gcd-win.png" alt="Game win" style="width:500px;"/>
+
+Поражение
+
+<img src="screens/gcd-fail.png" alt="Game win" style="width:500px;"/>
