@@ -6,7 +6,7 @@ import static hexlet.code.Constants.EXIT_NUMBER;
 import static hexlet.code.Constants.OPTIONS;
 
 public class Cli {
-    private final static Scanner SCANNER = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static String greet() {
         System.out.print("May I have your name? ");

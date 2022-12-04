@@ -2,9 +2,8 @@ package hexlet.code;
 
 import hexlet.code.games.Even;
 
-import java.util.Scanner;
-
-import static hexlet.code.Constants.*;
+import static hexlet.code.Constants.EVEN_NUMBER;
+import static hexlet.code.Constants.EXIT_NUMBER;
 
 public class App {
 
@@ -26,6 +25,8 @@ public class App {
             case EVEN_NUMBER:
                 Even.run(userName);
                 break;
+            default:
+                return;
         }
     }
 }

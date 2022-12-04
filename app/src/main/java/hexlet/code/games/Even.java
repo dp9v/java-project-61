@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Even {
 
-    private final static Random RANDOM = new Random();
-    private final static int LIMIT = 20;
-    private final static int LOOPS_COUNT = 3;
+    private static final Random RANDOM = new Random();
+    private static final int LIMIT = 20;
+    private static final int LOOPS_COUNT = 3;
 
     public static void run(String userName) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
