@@ -10,3 +10,12 @@
 Поражение
 
 <img src="screens/even-fail.png" alt="Game win" style="width:500px;"/>
+
+### Calc
+Победа
+
+<img src="screens/calc-win.png" alt="Game win" style="width:500px;"/>
+
+Поражение
+
+<img src="screens/calc-fail.png" alt="Game win" style="width:500px;"/>

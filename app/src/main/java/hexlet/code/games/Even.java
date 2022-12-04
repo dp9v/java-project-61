@@ -4,11 +4,12 @@ import hexlet.code.Cli;
 
 import java.util.Random;
 
+import static hexlet.code.Constants.LIMIT;
+import static hexlet.code.Constants.LOOPS_COUNT;
+
 public class Even {
 
     private static final Random RANDOM = new Random();
-    private static final int LIMIT = 20;
-    private static final int LOOPS_COUNT = 3;
 
     public static void run(String userName) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");

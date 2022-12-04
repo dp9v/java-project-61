@@ -22,10 +22,14 @@ public class Cli {
         }
         System.out.printf("%d - %s\n", EXIT_NUMBER, OPTIONS[EXIT_NUMBER]);
         System.out.print("Your choice: ");
-        return Integer.parseInt(SCANNER.nextLine());
+        return nextNumber();
     }
 
     public static String nextLine() {
         return SCANNER.nextLine();
+    }
+
+    public static int nextNumber() {
+        return Integer.parseInt(SCANNER.nextLine());
     }
 }

@@ -1,7 +1,9 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 
+import static hexlet.code.Constants.CALC_NUMBER;
 import static hexlet.code.Constants.EVEN_NUMBER;
 import static hexlet.code.Constants.EXIT_NUMBER;
 
@@ -24,6 +26,9 @@ public class App {
         switch (option) {
             case EVEN_NUMBER:
                 Even.run(userName);
+                break;
+            case CALC_NUMBER:
+                Calc.run(userName);
                 break;
             default:
                 return;
