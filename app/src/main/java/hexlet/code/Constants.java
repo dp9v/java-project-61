@@ -9,7 +9,8 @@ public class Constants {
     public static final int CALC_NUMBER = 3;
     public static final int GCD_NUMBER = 4;
     public static final int PROGRESSION_NUMBER = 5;
+    public static final int PRIME_NUMBER = 6;
 
     public static final String[] OPTIONS =
-        {"Exit", "Greet", "Even", "Calc", "GCD", "Progression"};
+        {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
 }

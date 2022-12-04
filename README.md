@@ -42,3 +42,13 @@
 Поражение
 
 <img src="screens/progression-fail.png" alt="Game win" style="height:400px;"/>
+
+### Prime
+
+Победа
+
+<img src="screens/prime-win.png" alt="Game win" style="width:400px;"/>
+
+Поражение
+
+<img src="screens/prime-fail.png" alt="Game win" style="height:400px;"/>
