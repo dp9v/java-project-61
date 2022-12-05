@@ -6,9 +6,11 @@ import hexlet.code.utils.Randomizer;
 import static hexlet.code.utils.Constants.DEFAULT_LIMIT;
 
 public class Gcd {
+    private static final int LEFT_LIMIT = 1;
+
     public static boolean runLoop() {
-        var firstValue = Randomizer.nextInt(DEFAULT_LIMIT);
-        var secondValue = Randomizer.nextInt(DEFAULT_LIMIT);
+        var firstValue = Randomizer.nextInt(LEFT_LIMIT, DEFAULT_LIMIT);
+        var secondValue = Randomizer.nextInt(LEFT_LIMIT, DEFAULT_LIMIT);
         System.out.printf("Question: %d %d\n", firstValue, secondValue);
         System.out.print("Your answer: ");
         var answer = ConsoleReader.nextNumber();
