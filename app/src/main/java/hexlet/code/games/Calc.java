@@ -16,7 +16,7 @@ public class Calc {
     private static final int MULT_NUMBER = 2;
 
     public static void run(String userName) {
-        System.out.println("What is the result of expression?");
+        System.out.println("What is the result of the expression?");
         for (int i = 0; i < LOOPS_COUNT; i++) {
             var result = runLoop();
             if (!result) {
