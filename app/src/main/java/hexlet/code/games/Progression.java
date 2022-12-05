@@ -1,36 +1,19 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
-import java.util.Random;
-
-import static hexlet.code.Constants.LOOPS_COUNT;
+import hexlet.code.utils.ConsoleReader;
+import hexlet.code.utils.Randomizer;
 
 public class Progression {
-    private static final Random RANDOM = new Random();
-
     private static final int PROGRESSION_LENGTH = 10;
     private static final int PROGRESSION_CONSTANT_LIMIT = 10;
 
-    public static void run(String userName) {
-        System.out.println("What number is missing in the progression?");
-        for (int i = 0; i < LOOPS_COUNT; i++) {
-            var result = runLoop();
-            if (!result) {
-                System.out.printf("Let's try again, %s!\n", userName);
-                return;
-            }
-        }
-        System.out.printf("Congratulations, %s!\n", userName);
-    }
-
-    private static boolean runLoop() {
-        var missedElementIndex = RANDOM.nextInt(PROGRESSION_LENGTH);
+    public static boolean runLoop() {
+        var missedElementIndex = Randomizer.nextInt(PROGRESSION_LENGTH);
         var progression = generateProgression();
 
         System.out.printf("Question: %s\n", generateProgressionString(progression, missedElementIndex));
         System.out.print("Your answer: ");
-        var answer = Cli.nextNumber();
+        var answer = ConsoleReader.nextNumber();
         var expectedAnswer = progression[missedElementIndex];
 
         if (answer == expectedAnswer) {
@@ -42,10 +25,10 @@ public class Progression {
         return false;
     }
 
-    public static int[] generateProgression() {
+    private static int[] generateProgression() {
         var result = new int[PROGRESSION_LENGTH];
-        var constant = RANDOM.nextInt(PROGRESSION_CONSTANT_LIMIT);
-        var currentElement = RANDOM.nextInt(PROGRESSION_CONSTANT_LIMIT);
+        var constant = Randomizer.nextInt(PROGRESSION_CONSTANT_LIMIT);
+        var currentElement = Randomizer.nextInt(PROGRESSION_CONSTANT_LIMIT);
 
         for (int i = 0; i < PROGRESSION_LENGTH; i++) {
             result[i] = currentElement;
@@ -54,7 +37,7 @@ public class Progression {
         return result;
     }
 
-    public static String generateProgressionString(int[] progression, int missedElementIndex) {
+    private static String generateProgressionString(int[] progression, int missedElementIndex) {
         var result = new StringBuilder();
         for (int i = 0; i < progression.length; i++) {
             if (i == missedElementIndex) {

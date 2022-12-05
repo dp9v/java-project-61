@@ -1,37 +1,19 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
-import java.util.Random;
-
-import static hexlet.code.Constants.LOOPS_COUNT;
+import hexlet.code.utils.ConsoleReader;
+import hexlet.code.utils.Randomizer;
 
 public class Prime {
-
-    private static final Random RANDOM = new Random();
-
     private static final int LIMIT = 1000;
 
-    public static void run(String userName) {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (int i = 0; i < LOOPS_COUNT; i++) {
-            var result = runLoop();
-            if (!result) {
-                System.out.printf("Let's try again, %s!\n", userName);
-                return;
-            }
-        }
-        System.out.printf("Congratulations, %s!\n", userName);
-    }
-
-    private static boolean runLoop() {
-        var number = RANDOM.nextInt(LIMIT);
+    public static boolean runLoop() {
+        var number = Randomizer.nextInt(LIMIT);
         var isPrime = isPrime(number);
         String expectedAnswer = isPrime ? "yes" : "no";
 
         System.out.printf("Question: %s\n", number);
         System.out.print("Your answer: ");
-        var answer = Cli.nextLine();
+        var answer = ConsoleReader.nextLine();
 
         if (answer.equals(expectedAnswer)) {
             System.out.println("Correct!");

@@ -1,34 +1,17 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.utils.ConsoleReader;
+import hexlet.code.utils.Randomizer;
 
-import java.util.Random;
-
-import static hexlet.code.Constants.LIMIT;
-import static hexlet.code.Constants.LOOPS_COUNT;
+import static hexlet.code.utils.Constants.DEFAULT_LIMIT;
 
 public class Gcd {
-    private static final Random RANDOM = new Random();
-
-
-    public static void run(String userName) {
-        System.out.println("Find the greatest common divisor of given numbers.");
-        for (int i = 0; i < LOOPS_COUNT; i++) {
-            var result = runLoop();
-            if (!result) {
-                System.out.printf("Let's try again, %s!\n", userName);
-                return;
-            }
-        }
-        System.out.printf("Congratulations, %s!\n", userName);
-    }
-
-    private static boolean runLoop() {
-        var firstValue = RANDOM.nextInt(LIMIT);
-        var secondValue = RANDOM.nextInt(LIMIT);
+    public static boolean runLoop() {
+        var firstValue = Randomizer.nextInt(DEFAULT_LIMIT);
+        var secondValue = Randomizer.nextInt(DEFAULT_LIMIT);
         System.out.printf("Question: %d %d\n", firstValue, secondValue);
         System.out.print("Your answer: ");
-        var answer = Cli.nextNumber();
+        var answer = ConsoleReader.nextNumber();
         var correctAnswer = calculate(firstValue, secondValue);
 
         if (answer == correctAnswer) {

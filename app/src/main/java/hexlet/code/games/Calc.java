@@ -1,39 +1,24 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.utils.ConsoleReader;
+import hexlet.code.utils.Randomizer;
 
-import java.util.Random;
-
-import static hexlet.code.Constants.LIMIT;
-import static hexlet.code.Constants.LOOPS_COUNT;
+import static hexlet.code.utils.Constants.DEFAULT_LIMIT;
 
 public class Calc {
-    private static final Random RANDOM = new Random();
-
     private static final char[] SYMBOLS = {'+', '-', '*'};
     private static final int PLUS_NUMBER = 0;
     private static final int MINIS_NUMBER = 1;
     private static final int MULT_NUMBER = 2;
 
-    public static void run(String userName) {
-        System.out.println("What is the result of the expression?");
-        for (int i = 0; i < LOOPS_COUNT; i++) {
-            var result = runLoop();
-            if (!result) {
-                System.out.printf("Let's try again, %s!\n", userName);
-                return;
-            }
-        }
-        System.out.printf("Congratulations, %s!\n", userName);
-    }
+    public static boolean runLoop() {
+        var leftValue = Randomizer.nextInt(DEFAULT_LIMIT);
+        var rightValue = Randomizer.nextInt(DEFAULT_LIMIT);
+        var operator = Randomizer.nextInt(SYMBOLS.length);
 
-    private static boolean runLoop() {
-        var leftValue = RANDOM.nextInt(LIMIT);
-        var rightValue = RANDOM.nextInt(LIMIT);
-        var operator = RANDOM.nextInt(SYMBOLS.length);
         System.out.printf("Question: %d %c %d\n", leftValue, SYMBOLS[operator], rightValue);
         System.out.print("Your answer: ");
-        var answer = Cli.nextNumber();
+        var answer = ConsoleReader.nextNumber();
         var correctAnswer = calculate(leftValue, rightValue, operator);
 
         if (answer == correctAnswer) {

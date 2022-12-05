@@ -1,42 +1,43 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
+import hexlet.code.utils.ConsoleReader;
 
-import static hexlet.code.Constants.CALC_NUMBER;
-import static hexlet.code.Constants.EVEN_NUMBER;
-import static hexlet.code.Constants.EXIT_NUMBER;
-import static hexlet.code.Constants.GCD_NUMBER;
-import static hexlet.code.Constants.PRIME_NUMBER;
-import static hexlet.code.Constants.PROGRESSION_NUMBER;
+import static hexlet.code.utils.Constants.EXIT_NUMBER;
+import static hexlet.code.utils.Constants.OPTIONS;
 
 public class App {
 
 
     public static void main(String[] args) {
-        var number = Cli.selectNumber();
+        var option = selectOption();
         System.out.println("\nWelcome to the Brain Games!");
-        runOption(number);
-    }
 
-    private static void runOption(int option) {
         if (option == EXIT_NUMBER) {
             return;
         }
 
-        var userName = Cli.greet();
+        var userName = greet();
 
-        switch (option) {
-            case EVEN_NUMBER -> Even.run(userName);
-            case CALC_NUMBER -> Calc.run(userName);
-            case GCD_NUMBER -> Gcd.run(userName);
-            case PROGRESSION_NUMBER -> Progression.run(userName);
-            case PRIME_NUMBER -> Prime.run(userName);
-            default -> {
-            }
+        if (option >= OPTIONS.length) {
+            return;
         }
+        GameEngine.runGame(userName, option);
+    }
+
+    public static String greet() {
+        System.out.print("May I have your name? ");
+        var userName = ConsoleReader.nextLine();
+        System.out.printf("Hello, %s!\n", userName);
+        return userName;
+    }
+
+    public static int selectOption() {
+        System.out.println("Please enter the game number and press Enter.");
+        for (int i = 1; i < OPTIONS.length; i++) {
+            System.out.printf("%d - %s\n", i, OPTIONS[i]);
+        }
+        System.out.printf("%d - %s\n", EXIT_NUMBER, OPTIONS[EXIT_NUMBER]);
+        System.out.print("Your choice: ");
+        return ConsoleReader.nextNumber();
     }
 }
