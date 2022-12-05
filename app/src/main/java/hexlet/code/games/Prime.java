@@ -13,7 +13,7 @@ public class Prime {
     private static final int LIMIT = 1000;
 
     public static void run(String userName) {
-        System.out.println("Answer 'yes' if the number is prime. Otherwise answer 'no'.");
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         for (int i = 0; i < LOOPS_COUNT; i++) {
             var result = runLoop();
             if (!result) {
