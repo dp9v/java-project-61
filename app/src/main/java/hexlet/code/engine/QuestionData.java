@@ -1,6 +1,6 @@
 package hexlet.code.engine;
 
-public class QuestionData {
+public final class QuestionData {
     private final String question;
     private final String expectedAnswer;
 
