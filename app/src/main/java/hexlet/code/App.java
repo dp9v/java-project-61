@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.utils.ConsoleReader;
 
 import static hexlet.code.utils.Constants.EXIT_NUMBER;
+import static hexlet.code.utils.Constants.GREET_NUMBER;
 import static hexlet.code.utils.Constants.OPTIONS;
 
 public class App {
@@ -18,7 +19,7 @@ public class App {
 
         var userName = greet();
 
-        if (option >= OPTIONS.length) {
+        if (option >= OPTIONS.length || option == GREET_NUMBER) {
             return;
         }
         GameEngine.runGame(userName, option);
