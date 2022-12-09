@@ -22,7 +22,8 @@ public class App {
         if (option >= OPTIONS.length || option == GREET_NUMBER) {
             return;
         }
-        GameEngine.runGame(userName, option);
+        var gameData = GameGenerator.generateGame(option);
+        GameEngine.runGame(gameData, userName);
     }
 
     public static String greet() {

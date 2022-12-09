@@ -15,12 +15,5 @@ public class Constants {
     public static final String[] OPTIONS =
         {"Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"};
 
-    public static final String[] GAME_DESCRIPTIONS = {
-        null, null,
-        "Answer 'yes' if the number is even, otherwise answer 'no'.",
-        "What is the result of the expression?",
-        "Find the greatest common divisor of given numbers.",
-        "What number is missing in the progression?",
-        "Answer 'yes' if given number is prime. Otherwise answer 'no'."
-    };
+
 }

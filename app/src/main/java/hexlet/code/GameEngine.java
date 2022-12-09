@@ -1,19 +1,8 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
 import hexlet.code.games.GameData;
-import hexlet.code.games.Gcd;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
 import hexlet.code.games.QuestionData;
 import hexlet.code.utils.ConsoleReader;
-
-import static hexlet.code.utils.Constants.CALC_NUMBER;
-import static hexlet.code.utils.Constants.EVEN_NUMBER;
-import static hexlet.code.utils.Constants.GCD_NUMBER;
-import static hexlet.code.utils.Constants.PRIME_NUMBER;
-import static hexlet.code.utils.Constants.PROGRESSION_NUMBER;
 
 public class GameEngine {
 
@@ -29,11 +18,6 @@ public class GameEngine {
         System.out.printf("Congratulations, %s!\n", userName);
     }
 
-    public static void runGame(String userName, int option) {
-        GameData gameData = generateGame(option);
-        runGame(gameData, userName);
-    }
-
     public static boolean askQuestion(QuestionData questionData) {
 
         System.out.printf("Question: %s\n", questionData.getQuestion());
@@ -47,27 +31,5 @@ public class GameEngine {
 
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, questionData.getExpectedAnswer());
         return false;
-    }
-
-    private static boolean runGameLoop(int option) {
-        return switch (option) {
-            case EVEN_NUMBER -> Even.runLoop();
-            case CALC_NUMBER -> Calc.runLoop();
-            case GCD_NUMBER -> Gcd.runLoop();
-            case PROGRESSION_NUMBER -> Progression.runLoop();
-            case PRIME_NUMBER -> Prime.runLoop();
-            default -> false;
-        };
-    }
-
-    private static GameData generateGame(int option) {
-        return switch (option) {
-            case EVEN_NUMBER -> Even.generateGame();
-            case CALC_NUMBER -> Calc.generateGame();
-            case GCD_NUMBER -> Gcd.generateGame();
-            case PROGRESSION_NUMBER -> Progression.generateGame();
-            case PRIME_NUMBER -> Prime.generateGame();
-            default -> throw new RuntimeException();
-        };
     }
 }
