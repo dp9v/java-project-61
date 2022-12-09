@@ -4,9 +4,9 @@ public final class QuestionData {
     private final String question;
     private final String expectedAnswer;
 
-    public QuestionData(String question, String expectedAnswer) {
-        this.question = question;
-        this.expectedAnswer = expectedAnswer;
+    public QuestionData(String questionValue, String expectedAnswerValue) {
+        this.question = questionValue;
+        this.expectedAnswer = expectedAnswerValue;
     }
 
     public String getExpectedAnswer() {

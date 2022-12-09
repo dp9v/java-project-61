@@ -4,9 +4,9 @@ public final class GameData {
     private final String introduction;
     private final QuestionData[] questions;
 
-    public GameData(String introduction, QuestionData[] questions) {
-        this.introduction = introduction;
-        this.questions = questions;
+    public GameData(String introductionValue, QuestionData[] questionsValue) {
+        this.introduction = introductionValue;
+        this.questions = questionsValue;
     }
 
     public String getIntroduction() {
