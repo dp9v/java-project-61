@@ -1,10 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.utils.ConsoleReader;
-import hexlet.code.utils.Constants;
-import hexlet.code.utils.Randomizer;
+import hexlet.code.common.Randomizer;
+import hexlet.code.engine.QuestionData;
 
-import static hexlet.code.utils.Constants.DEFAULT_LIMIT;
+import static hexlet.code.common.Constants.DEFAULT_LIMIT;
 
 public class Even {
     public static QuestionData generateQuestion() {

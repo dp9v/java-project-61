@@ -1,4 +1,4 @@
-package hexlet.code.utils;
+package hexlet.code.common;
 
 import java.util.Random;
 

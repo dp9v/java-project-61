@@ -1,8 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.utils.ConsoleReader;
-import hexlet.code.utils.Constants;
-import hexlet.code.utils.Randomizer;
+import hexlet.code.common.Randomizer;
+import hexlet.code.engine.QuestionData;
 
 public class Progression {
     private static final int PROGRESSION_LENGTH = 10;

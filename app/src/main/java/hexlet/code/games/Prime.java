@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.utils.Randomizer;
+import hexlet.code.common.Randomizer;
+import hexlet.code.engine.QuestionData;
 
 public class Prime {
     private static final int LIMIT = 1000;

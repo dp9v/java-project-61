@@ -1,19 +1,19 @@
 package hexlet.code;
 
+import hexlet.code.common.Constants;
+import hexlet.code.engine.GameData;
+import hexlet.code.engine.QuestionData;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
-import hexlet.code.games.GameData;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-import hexlet.code.games.QuestionData;
-import hexlet.code.utils.Constants;
 
-import static hexlet.code.utils.Constants.CALC_NUMBER;
-import static hexlet.code.utils.Constants.EVEN_NUMBER;
-import static hexlet.code.utils.Constants.GCD_NUMBER;
-import static hexlet.code.utils.Constants.PRIME_NUMBER;
-import static hexlet.code.utils.Constants.PROGRESSION_NUMBER;
+import static hexlet.code.common.Constants.CALC_NUMBER;
+import static hexlet.code.common.Constants.EVEN_NUMBER;
+import static hexlet.code.common.Constants.GCD_NUMBER;
+import static hexlet.code.common.Constants.PRIME_NUMBER;
+import static hexlet.code.common.Constants.PROGRESSION_NUMBER;
 
 public class GameGenerator {
     private static final String[] GAME_DESCRIPTIONS = {
@@ -40,7 +40,7 @@ public class GameGenerator {
             case GCD_NUMBER -> Gcd.generateQuestion();
             case PROGRESSION_NUMBER -> Progression.generateQuestion();
             case PRIME_NUMBER -> Prime.generateQuestion();
-            default -> throw new RuntimeException();
+            default -> throw new RuntimeException("Unknown option: " + option);
         };
     }
 }
