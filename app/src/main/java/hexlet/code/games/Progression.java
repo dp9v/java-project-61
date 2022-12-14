@@ -1,21 +1,36 @@
 package hexlet.code.games;
 
 import hexlet.code.common.Randomizer;
-import hexlet.code.engine.QuestionData;
+import hexlet.code.common.GameEngine;
+
+import static hexlet.code.common.Constants.DEFAULT_QUESTIONS_COUNT;
 
 public class Progression {
+    private static final String INTRO = "What number is missing in the progression?";
     private static final int PROGRESSION_LENGTH = 10;
     private static final int PROGRESSION_CONSTANT_LIMIT = 10;
 
-    public static QuestionData generateQuestion() {
+    public static void run() {
+        GameEngine.run(INTRO, generateQuestions());
+    }
+
+    private static String[][] generateQuestions() {
+        var result = new String[DEFAULT_QUESTIONS_COUNT][];
+        for (int i = 0; i < DEFAULT_QUESTIONS_COUNT; i++) {
+            result[i] = generateQuestion();
+        }
+        return result;
+    }
+
+    private static String[] generateQuestion() {
         var missedElementIndex = Randomizer.nextInt(PROGRESSION_LENGTH);
         var step = Randomizer.nextInt(PROGRESSION_CONSTANT_LIMIT);
         var firstValue = Randomizer.nextInt(PROGRESSION_CONSTANT_LIMIT);
         var progression = generateProgression(firstValue, step, PROGRESSION_LENGTH);
-        return new QuestionData(
+        return new String[]{
             generateProgressionString(progression, missedElementIndex),
             Integer.toString(progression[missedElementIndex])
-        );
+        };
     }
 
     private static int[] generateProgression(int firstValue, int step, int progressionLength) {
