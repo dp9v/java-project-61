@@ -8,7 +8,7 @@ import static hexlet.code.common.Constants.DEFAULT_QUESTIONS_COUNT;
 
 public class Gcd {
     private static final int LEFT_LIMIT = 1;
-    private static final String INTRO = "Find the greatest common divisor of given numbers";
+    private static final String INTRO = "Find the greatest common divisor of given numbers.";
 
     public static void run() {
         GameEngine.run(INTRO, generateQuestions());
