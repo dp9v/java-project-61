@@ -8,20 +8,21 @@ public class GameEngine {
 
     public static void run(
         String introductionText,
-        String[][] questions
+        String[][] questionsData
     ) {
+        System.out.println("\nWelcome to the Brain Games!");
         System.out.print("May I have your name? ");
         var userName = ConsoleReader.nextLine();
         System.out.printf("Hello, %s!\n", userName);
 
         System.out.println(introductionText);
 
-        for (String[] question : questions) {
-            System.out.printf(QUESTION_TEMPLATE, question[0]);
+        for (String[] questionData : questionsData) {
+            System.out.printf(QUESTION_TEMPLATE, questionData[0]);
             System.out.print("Your answer: ");
             var answer = ConsoleReader.nextLine();
-            if (!answer.equals(question[1])) {
-                System.out.printf(WRONG_ANSWER_TEMPLATE, answer, question[1]);
+            if (!answer.equals(questionData[1])) {
+                System.out.printf(WRONG_ANSWER_TEMPLATE, answer, questionData[1]);
                 System.out.printf(FAIL_TEMPLATE, userName);
                 return;
             }

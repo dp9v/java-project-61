@@ -15,11 +15,11 @@ public class Progression {
     }
 
     private static String[][] generateQuestions() {
-        var result = new String[DEFAULT_QUESTIONS_COUNT][];
+        var generatedQuestions = new String[DEFAULT_QUESTIONS_COUNT][];
         for (int i = 0; i < DEFAULT_QUESTIONS_COUNT; i++) {
-            result[i] = generateQuestion();
+            generatedQuestions[i] = generateQuestion();
         }
-        return result;
+        return generatedQuestions;
     }
 
     private static String[] generateQuestion() {
@@ -28,7 +28,7 @@ public class Progression {
         var firstValue = Randomizer.nextInt(PROGRESSION_CONSTANT_LIMIT);
         var progression = generateProgression(firstValue, step, PROGRESSION_LENGTH);
         return new String[]{
-            generateProgressionString(progression, missedElementIndex),
+            generateProgressionQuestionText(progression, missedElementIndex),
             Integer.toString(progression[missedElementIndex])
         };
     }
@@ -44,7 +44,7 @@ public class Progression {
         return result;
     }
 
-    private static String generateProgressionString(int[] progression, int missedElementIndex) {
+    private static String generateProgressionQuestionText(int[] progression, int missedElementIndex) {
         var result = new StringBuilder();
         for (int i = 0; i < progression.length; i++) {
             if (i == missedElementIndex) {

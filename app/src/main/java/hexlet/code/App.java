@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.common.Cli;
 import hexlet.code.common.ConsoleReader;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
@@ -23,19 +24,17 @@ public class App {
         System.out.print("Your choice: ");
         var option = ConsoleReader.nextNumber();
 
-        System.out.println("\nWelcome to the Brain Games!");
-
-        if (option == EXIT_NUMBER) {
-            return;
+        switch (option) {
+            case EXIT_NUMBER:
+                System.out.println("\nWelcome to the Brain Games!");
+                break;
+            case GREET_NUMBER:
+                System.out.println("\nWelcome to the Brain Games!");
+                Cli.greet();
+                break;
+            default:
+                runGame(option);
         }
-        if (option == GREET_NUMBER) {
-            System.out.print("May I have your name? ");
-            var userName = ConsoleReader.nextLine();
-            System.out.printf("Hello, %s!\n", userName);
-            return;
-        }
-
-        runGame(option);
     }
 
     public static void printOptions() {

@@ -3,10 +3,10 @@ package hexlet.code.games;
 import hexlet.code.common.Randomizer;
 import hexlet.code.common.GameEngine;
 
-import static hexlet.code.common.Constants.DEFAULT_LIMIT;
 import static hexlet.code.common.Constants.DEFAULT_QUESTIONS_COUNT;
 
 public class Calc {
+    public static final int NUMBER_LIMIT = 20;
     private static final String INTRO = "What is the result of the expression?";
     private static final char[] SYMBOLS = {'+', '-', '*'};
     private static final int PLUS_NUMBER = 0;
@@ -18,16 +18,16 @@ public class Calc {
     }
 
     private static String[][] generateQuestions() {
-        var result = new String[DEFAULT_QUESTIONS_COUNT][];
+        var generatedQuestions = new String[DEFAULT_QUESTIONS_COUNT][];
         for (int i = 0; i < DEFAULT_QUESTIONS_COUNT; i++) {
-            result[i] = generateQuestion();
+            generatedQuestions[i] = generateQuestion();
         }
-        return result;
+        return generatedQuestions;
     }
 
     private static String[] generateQuestion() {
-        var leftValue = Randomizer.nextInt(DEFAULT_LIMIT);
-        var rightValue = Randomizer.nextInt(DEFAULT_LIMIT);
+        var leftValue = Randomizer.nextInt(NUMBER_LIMIT);
+        var rightValue = Randomizer.nextInt(NUMBER_LIMIT);
         var operator = Randomizer.nextInt(SYMBOLS.length);
         return new String[]{
             "%d %c %d".formatted(leftValue, SYMBOLS[operator], rightValue),

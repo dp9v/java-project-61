@@ -1,7 +1,6 @@
 package hexlet.code.common;
 
 public class Constants {
-    public static final int DEFAULT_LIMIT = 20;
     public static final int DEFAULT_QUESTIONS_COUNT = 3;
 
     public static final int EXIT_NUMBER = 0;

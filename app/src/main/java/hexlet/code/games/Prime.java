@@ -14,11 +14,11 @@ public class Prime {
     }
 
     private static String[][] generateQuestions() {
-        var result = new String[DEFAULT_QUESTIONS_COUNT][];
+        var generatedQuestions = new String[DEFAULT_QUESTIONS_COUNT][];
         for (int i = 0; i < DEFAULT_QUESTIONS_COUNT; i++) {
-            result[i] = generateQuestion();
+            generatedQuestions[i] = generateQuestion();
         }
-        return result;
+        return generatedQuestions;
     }
 
     private static String[] generateQuestion() {
@@ -31,7 +31,7 @@ public class Prime {
     }
 
     private static boolean isPrime(int number) {
-        if (number == 1) {
+        if (number <= 1) {
             return false;
         }
         for (int i = 2; i < number / 2 + 1; i++) {
